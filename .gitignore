@@ -1,0 +1,7 @@
+MDK-ARM/NUCLEO-F103RB/
+*.lst
+*.uvoptx
+*.TMP
+*.pdf
+*.dbgconf
+MDK-ARM/RTE/Project*
