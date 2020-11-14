@@ -70,7 +70,7 @@ void init_adc(){
  
 //PC3 - ADC_IN13
 
-int get_batterie(){
+int get_batterie(){ 
     ADC1->SQR3 = 12;//ADC_IN12 sur PC2
     ADC1->CR2 |= (1<<22);//SWSTART, commence conversion
     while( !(ADC1->SR & (1<<1)) );//tant que la convesrion n'et pas finie
@@ -88,10 +88,10 @@ int get_angle(){
     angle=ADC1->DR; //tension en 0x
     angle = angle*3.3/4096; //tension en volte
     angle = (angle - 1.65)/ (precision); //on estime que S2,5 donc 480mv/g comme precision
-  angle = asin(angle); // passage en angle teste avec tension 1,79 degre 30
+    angle = asin(angle); // passage en angle teste avec tension 1,79 degre 30
     return (int) angle;
 }
-int waring_grand_angle(){ //detecete le seuil de 40 degre
+int waring_grand_angle(){ //detecete le seuil de 40 degre, a integrer dans servomoteur et emmeteur
     float angle_detecte ;
     angle_detecte = get_angle();
     if (angle_detecte>=40)
@@ -99,7 +99,7 @@ int waring_grand_angle(){ //detecete le seuil de 40 degre
     else
         return 0;
 }
-int waring_low_batterie(){ //detecete la batterie
+int waring_low_batterie(){ //detecete la batterie, a intergrer dans emetteur
     float batterie_detecte ;
     batterie_detecte =get_batterie();
     if (batterie_detecte< limite_tension)
