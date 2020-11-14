@@ -33,11 +33,8 @@ void GPIOC_init(){ //initialsation PC0 PC2
 
 void init_adc(){
     
-    RCC->CFGR &= ~(1<<14);
-    RCC->CFGR |= (1<<15);
-    
-    LL_APB2_GRP1_EnableClock(LL_APB2_GRP1_PERIPH_ADC1);
-  LL_ADC_InitTypeDef  ADC_InitStructure = {0};
+    LL_APB2_GRP1_EnableClock(LL_APB2_GRP1_PERIPH_ADC1); //initialisation ADC
+		LL_ADC_InitTypeDef  ADC_InitStructure = {0}; // adcclk = 36mhz
     
     ADC1->CR2 |= (1<<20);//EXTTRIG =1 External trigger conversion mode for regular channels
     
@@ -45,16 +42,16 @@ void init_adc(){
     ADC1->CR2 |= (1<<18);
     ADC1->CR2 |= (1<<19);
     
-    ADC1->SQR1 &= ~(1<<20);//L =0000 (1 convertion)
-    ADC1->SQR1 &= ~(1<<21); //11,12,9
+    ADC1->SQR1 &= ~(1<<20);//L=0000 (1 convertion)
+    ADC1->SQR1 &= ~(1<<21); //chapitre 11/12/9
     ADC1->SQR1 &= ~(1<<22);
     ADC1->SQR1 &= ~(1<<23);
     
-    ADC_InitStructure.DataAlignment = LL_ADC_DATA_ALIGN_RIGHT ; //?soit  LL_ADC_DATA_ALIGN_LEFT
-  ADC_InitStructure.SequencersScanMode = LL_ADC_SEQ_SCAN_DISABLE ;   //?????
-  LL_ADC_Init(ADC1,&ADC_InitStructure);
+    ADC_InitStructure.DataAlignment = LL_ADC_DATA_ALIGN_RIGHT ; //soit  LL_ADC_DATA_ALIGN_LEFT plus facile a lire
+		ADC_InitStructure.SequencersScanMode = LL_ADC_SEQ_SCAN_DISABLE ;   
+		LL_ADC_Init(ADC1,&ADC_InitStructure);
     
-    LL_ADC_SetChannelSamplingTime(ADC1,LL_ADC_CHANNEL_12,LL_ADC_SAMPLINGTIME_13CYCLES_5);
+    LL_ADC_SetChannelSamplingTime(ADC1,LL_ADC_CHANNEL_12,LL_ADC_SAMPLINGTIME_13CYCLES_5); 
     LL_ADC_SetChannelSamplingTime(ADC1,LL_ADC_CHANNEL_10,LL_ADC_SAMPLINGTIME_13CYCLES_5);
     LL_ADC_StartCalibration(ADC1);
     
@@ -74,8 +71,8 @@ int get_batterie(){
     ADC1->SQR3 = 12;//ADC_IN12 sur PC2
     ADC1->CR2 |= (1<<22);//SWSTART, commence conversion
     while( !(ADC1->SR & (1<<1)) );//tant que la convesrion n'et pas finie
-    LL_ADC_DisableIT_EOS(ADC1);
-    batterie=ADC1->DR;
+    LL_ADC_DisableIT_EOS(ADC1); //terminer
+    batterie=ADC1->DR; //lire le resultat
     batterie = batterie/4096*3.3; //0-3,3V sur 24 bits
     return batterie;
 }
