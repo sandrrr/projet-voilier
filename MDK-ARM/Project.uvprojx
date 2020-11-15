@@ -413,12 +413,22 @@
             <File>
               <FileName>EmetteurRF.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\EmetteurRF.c</FilePath>
+              <FilePath>..\Services\EmetteurRF.c</FilePath>
             </File>
             <File>
               <FileName>EmetteurRF.h</FileName>
               <FileType>5</FileType>
-              <FilePath>.\EmetteurRF.h</FilePath>
+              <FilePath>..\Services\EmetteurRF.h</FilePath>
+            </File>
+            <File>
+              <FileName>Moteur.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Services\Moteur.c</FilePath>
+            </File>
+            <File>
+              <FileName>Moteur.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\Services\Moteur.h</FilePath>
             </File>
           </Files>
         </Group>
@@ -904,12 +914,22 @@
             <File>
               <FileName>EmetteurRF.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\EmetteurRF.c</FilePath>
+              <FilePath>..\Services\EmetteurRF.c</FilePath>
             </File>
             <File>
               <FileName>EmetteurRF.h</FileName>
               <FileType>5</FileType>
-              <FilePath>.\EmetteurRF.h</FilePath>
+              <FilePath>..\Services\EmetteurRF.h</FilePath>
+            </File>
+            <File>
+              <FileName>Moteur.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Services\Moteur.c</FilePath>
+            </File>
+            <File>
+              <FileName>Moteur.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\Services\Moteur.h</FilePath>
             </File>
           </Files>
         </Group>
