@@ -6,6 +6,7 @@
 #include "stm32f1xx_ll_tim.h"
 #include "stm32f1xx_ll_usart.h"
 #include <math.h>
+#include "EmetteurRF.h"
 #define precision 0.48
 #define limite_tension 2.7
 
@@ -88,19 +89,26 @@ int get_angle(){
     angle = asin(angle); // passage en angle teste avec tension 1,79 degre 30
     return (int) angle;
 }
-int waring_grand_angle(){ //detecete le seuil de 40 degre, a integrer dans servomoteur et emmeteur
+int warning_grand_angle(){ //detecete le seuil de 40 degre, a integrer dans servomoteur et emmeteur
     float angle_detecte ;
     angle_detecte = get_angle();
-    if (angle_detecte>=40)
-        return 1;
-    else
-        return 0;
+    if (angle_detecte>=40){
+			  send(USART2, "Warning:angle roulis trop grand" );
+			  return 1;
+		}
+    else{
+				return 0;
+		}
+        
 }
-int waring_low_batterie(){ //detecete la batterie, a intergrer dans emetteur
+int warning_low_batterie(){ //detecete la batterie, a intergrer dans emetteur
     float batterie_detecte ;
-    batterie_detecte =get_batterie();
-    if (batterie_detecte< limite_tension)
-        return 1;
+    batterie_detecte = get_batterie();
+    if (batterie_detecte< limite_tension){
+			 send(USART2, "batterie:angle roulis trop grand" );
+			 return 1;
+		}
+        
     else
         return 0;
 }
