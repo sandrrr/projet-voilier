@@ -9,6 +9,7 @@ Soumaré Coumba
 ------------------------Rendu Projet Voilier----------------------------------------------
 
 Dans ce projet, nous avons codé les fonctions girouette, batterie, servomoteur, moteur, et émetteur.
+
 Les parties girouette et batterie ont été testées en réel:
  
  *La partie Batterie et l'Accelerometre pour détecter l'angle de roulis sont dans le fichier adc.c,
