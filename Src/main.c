@@ -19,7 +19,11 @@
 #include "stm32f1xx_ll_rcc.h" // utile dans la fonction SystemClock_Config
 #include "stm32f1xx_ll_utils.h"   // utile dans la fonction SystemClock_Config
 #include "stm32f1xx_ll_system.h" // utile dans la fonction SystemClock_Config
-
+#include "adc.h"
+#include "girouette.h"
+#include "Servomoteur.h"
+#include "Moteur.h"
+#include "EmetteurRF.h"
 void  SystemClock_Config(void);
 
 /* Private functions ---------------------------------------------------------*/
@@ -35,14 +39,38 @@ int main(void)
 {
   /* Configure the system clock to 72 MHz */
   SystemClock_Config();
+	
+	//initialisation partie girouette
+	
+  /* Girouette_Conf();
+	 int angle;*/
+	 
+	//initialisation partie ADC
+	
+	/*GPIOC_init();
+	init_adc();*/
+	
+	
+	//partie test servomoteur
+	
+	/*servomoteur_init();  
+	test_servomoteur(50);*/
+	
+	//partie test moteur
+	
+	/*init_moteur();
+	vitesse_moteur(4);
+	sens_moteur(1);*/
   
-  /* Infinite loop */
+	//Infinite loop */
   while (1)
   {
-		
+		//partie test girouette et ADC
+	  //angle = Girouette_Get_Angle();
+		//get_batterie();
+		//get_angle();
   }
 }
-
 
 
 
