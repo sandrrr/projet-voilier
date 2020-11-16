@@ -75,6 +75,35 @@ void servomoteur_init(){
 
 
 //fonction permettant le bordage des voiles
-void border_voiles(int angle_girouette){
+
+//angle (position) fction affine de la duré d'impulsion
+//angle 45 degré et voiles bordés maximum (1 ms)
+//angle augmente, voiles s'ouvrent jusqu'à 90 degré (2 ms)
+/*void border_voiles(int angle_girouette){
+	
+	//check l'angle de la girouette, si l'angle est inférieur ou égal à 45 degré d'un côté ou de l'autre
+	if ( (angle_girouette<=45) || (angle_girouette>=360-45)){
+				TIM1->CCR1 =  360;
+		
+	}else{
+		if (angle_girouette > 45 && angle_girouette < 180){
+			TIM1->CCR1 =  ;
+		}else if (angle_girouette > 180 && angle_girouette < (360-45)) {
+			TIM1->CCR1 =  ;
+		}
+	
+	}*/
+	void test_servomoteur(int angle){
+			if ( (angle<=45) || (angle>=360-45)){
+				TIM1->CCR1 =  360;
+		
+	}else{
+		if (angle > 45 && angle < 180){
+			TIM1->CCR1 = 360 ;
+		}else if (angle > 180 && angle < (360-45)) {
+			TIM1->CCR1 = 45 ;
+		}
+		
+	}
 	
 }
