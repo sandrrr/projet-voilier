@@ -42,8 +42,7 @@ int main(void)
 	
 	//initialisation partie girouette
 	
-  /* Girouette_Conf();
-	 int angle;*/
+  /* Girouette_Conf();*/
 	 
 	//initialisation partie ADC
 	
