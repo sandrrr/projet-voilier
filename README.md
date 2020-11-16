@@ -20,3 +20,5 @@ Les parties girouette et batterie ont été testées en réel:
 Les parties servomoteur et moteur ont été testées en simulation. 
 
 
+
+Dans main.c, les fonctions de test sont commentées, pour tester il faut décommenter la partie testée.
