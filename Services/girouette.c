@@ -27,7 +27,7 @@ void Girouette_Conf(void) {
 	
 	// Configurer timer incrémental
 	// page 392 - Figure 134
-	MyTimer_Conf(TIM3,360*4,1); // ARR = 360*4, PSC = 1
+	MyTimer_Conf(TIM3,360*4,0); // ARR = 360*4, PSC = 0
 	TIM3->CCMR1 &= ~TIM_CCMR1_CC1S;
 	TIM3->CCMR1 |= TIM_CCMR1_CC1S_0;
 	TIM3->CCMR1 &= ~TIM_CCMR1_CC2S;
@@ -47,7 +47,8 @@ void Girouette_Conf(void) {
 }
 
 int Girouette_Get_Angle(void) {
-	return TIM3->CNT;
+	int angle_girouette = TIM3->CNT/4;
+	return angle_girouette;
 }
 
 //Handle PA5 interrupt
