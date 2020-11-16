@@ -19,6 +19,7 @@
 #include "stm32f1xx_ll_rcc.h" // utile dans la fonction SystemClock_Config
 #include "stm32f1xx_ll_utils.h"   // utile dans la fonction SystemClock_Config
 #include "stm32f1xx_ll_system.h" // utile dans la fonction SystemClock_Config
+#include "servomoteur.h"
 
 void  SystemClock_Config(void);
 
@@ -36,6 +37,8 @@ int main(void)
   /* Configure the system clock to 72 MHz */
   SystemClock_Config();
   
+	servomoteur_init();
+	
   /* Infinite loop */
   while (1)
   {
