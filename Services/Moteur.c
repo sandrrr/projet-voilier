@@ -17,6 +17,10 @@ void init_moteur (void){
 	//conf PWM
 	MyTimer_Conf_PWM(TIM2,2,7200, 199);
 	
+	//OC1 à configurer avec le registre CCER du TIM2 - CC1E Capture/Compare 1 output enable bit 0 de CCER
+	TIM2->CCER &= 0xFFEF;
+	TIM2->CCER |= (1<<4);
+	
 	//initialisation pin 2 en output push-pull pour le sens
 	LL_GPIO_SetPinMode(GPIOA,LL_GPIO_PIN_2,LL_GPIO_MODE_OUTPUT);
 	LL_GPIO_SetPinOutputType(GPIOA, LL_GPIO_PIN_2, LL_GPIO_OUTPUT_PUSHPULL);

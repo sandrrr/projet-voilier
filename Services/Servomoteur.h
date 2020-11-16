@@ -7,3 +7,4 @@ void servomoteur_init();
 
 //bordage des voiles
 void border_voiles(int angle_girouette);
+void test_servomoteur(int angle);

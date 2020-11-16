@@ -20,6 +20,7 @@
 #include "stm32f1xx_ll_utils.h"   // utile dans la fonction SystemClock_Config
 #include "stm32f1xx_ll_system.h" // utile dans la fonction SystemClock_Config
 #include "servomoteur.h"
+#include "moteur.h"
 
 void  SystemClock_Config(void);
 
@@ -38,6 +39,11 @@ int main(void)
   SystemClock_Config();
   
 	servomoteur_init();
+	test_servomoteur(50);
+	
+	init_moteur();
+	vitesse_moteur(4);
+	sens_moteur(1);
 	
   /* Infinite loop */
   while (1)
