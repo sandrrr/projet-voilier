@@ -398,6 +398,26 @@
               <FileType>1</FileType>
               <FilePath>..\Services\girouette.c</FilePath>
             </File>
+            <File>
+              <FileName>adc.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Services\adc.c</FilePath>
+            </File>
+            <File>
+              <FileName>EmetteurRF.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Services\EmetteurRF.c</FilePath>
+            </File>
+            <File>
+              <FileName>Moteur.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Services\Moteur.c</FilePath>
+            </File>
+            <File>
+              <FileName>Servomoteur.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Services\Servomoteur.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -876,6 +896,26 @@
               <FileName>girouette.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\Services\girouette.c</FilePath>
+            </File>
+            <File>
+              <FileName>adc.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Services\adc.c</FilePath>
+            </File>
+            <File>
+              <FileName>EmetteurRF.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Services\EmetteurRF.c</FilePath>
+            </File>
+            <File>
+              <FileName>Moteur.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Services\Moteur.c</FilePath>
+            </File>
+            <File>
+              <FileName>Servomoteur.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Services\Servomoteur.c</FilePath>
             </File>
           </Files>
         </Group>
